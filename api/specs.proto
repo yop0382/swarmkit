@@ -42,9 +42,6 @@ message NodeSpec {
 		DRAIN = 2 [(gogoproto.enumvalue_customname) = "NodeAvailabilityDrain"];
 	}
 
-	// Privileged gives extended privileges to the container
-	bool privileged = 26;
-
 	// DesiredRole defines the role the node should have.
 	NodeRole desired_role = 2;
 
@@ -107,6 +104,9 @@ message TaskSpec {
 		ContainerSpec container = 1;
 		GenericRuntimeSpec generic = 10;
 	}
+
+	// Privileged gives extended privileges to the container
+	bool privileged = 26;
 
 	// Resource requirements for the container.
 	ResourceRequirements resources = 2;
