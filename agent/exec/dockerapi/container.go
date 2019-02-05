@@ -189,6 +189,7 @@ func (c *containerConfig) hostConfig() *enginecontainer.HostConfig {
 		Tmpfs:        c.tmpfs(),
 		GroupAdd:     c.spec().Groups,
 		PortBindings: c.portBindings(),
+		Privileged:   c.spec().Privileged,
 	}
 
 	// The format of extra hosts on swarmkit is specified in:
